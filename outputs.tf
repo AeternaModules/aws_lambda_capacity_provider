@@ -1,7 +1,3 @@
-output "lambda_capacity_providers_id" {
-  description = "Map of id values across all lambda_capacity_providers, keyed the same as var.lambda_capacity_providers"
-  value       = { for k, v in aws_lambda_capacity_provider.lambda_capacity_providers : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "lambda_capacity_providers_arn" {
   description = "Map of arn values across all lambda_capacity_providers, keyed the same as var.lambda_capacity_providers"
   value       = { for k, v in aws_lambda_capacity_provider.lambda_capacity_providers : k => v.arn if v.arn != null && length(v.arn) > 0 }
